@@ -1,0 +1,31 @@
+---
+layout: default
+---
+{% for post in site.posts %}
+  <article class="card">
+    <div class="post-meta">{{ post.date | date: "%d.%m.%Y" }}</div>
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    {% if post.image %}
+      <a href="{{ post.url | relative_url }}">
+        <img class="post-cover" src="{{ post.image | relative_url }}" alt="{{ post.title }}" />
+      </a>
+    {% endif %}
+    <p>{{ post.excerpt | strip_html | truncatewords: 45 }}</p>
+    <p><a class="btn btn-secondary" href="{{ post.url | relative_url }}">Weiterlesen →</a></p>
+  </article>
+{% endfor %}
+
+<section class="support-card" id="kontakt">
+  <h2>Rückmeldungen &amp; freiwillige Unterstützung</h2>
+  <p>
+    <em>True North</em> ist ein unabhängiges, kostenloses Herzensprojekt[span_0](start_span)[span_0](end_span). Über Gedanken, Fragen oder Rückmeldungen zur App freue ich mich jederzeit[span_1](start_span)[span_1](end_span). Wenn dir die App guttut und du helfen möchtest, die laufenden Kosten für Entwickler-Lizenzen und Hosting zu decken, kannst du das Projekt hier freiwillig unterstützen[span_2](start_span)[span_2](end_span):
+  </p>
+  <div class="button-row">
+    <a class="btn btn-primary" href="mailto:kontakt@deine-truenorth-domain.at?subject=Feedback%20zu%20True%20North">
+      Feedback per E-Mail senden
+    </a>
+    <a class="btn btn-secondary" href="https://ko-fi.com/dein-link" target="_blank" rel="noopener noreferrer">
+      Projekt freiwillig unterstützen
+    </a>
+  </div>
+</section>
